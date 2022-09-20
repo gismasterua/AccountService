@@ -15,4 +15,7 @@ public class Config {
     public String emailDomain(){
         return "@acme.com";
     }
+
+    @Bean
+    public String userExistsErrorMessage() {return "User exist!";}
 }

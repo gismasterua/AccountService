@@ -1,5 +1,6 @@
 package services;
 
+import account.UserExistException;
 import dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,9 @@ public class UserService {
     @Autowired
     private String emailDomain;
 
+    @Autowired
+    private String userExistsErrorMessage;
+
     public void addUser(User user){
 
         System.out.println(user);
@@ -33,6 +37,9 @@ public class UserService {
         }
         if (user.getEmail() == null || user.getEmail().equals("") || !user.getEmail().endsWith(emailDomain)){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
+        if (userRepository.findAllByEmail(user.getEmail()).size() > 0){
+            throw new UserExistException(userExistsErrorMessage);
         }
         User savedUser = userRepository.save(user);
     }
