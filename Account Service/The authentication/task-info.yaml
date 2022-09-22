@@ -559,6 +559,24 @@ files:
 - name: src/dto/CustomErrorMessage.java
   visible: true
   learner_created: true
-feedback_link: https://hyperskill.org/projects/217/stages/1087/implement#comment
-status: Unchecked
+- name: src/account/SecurityConfig.java
+  visible: true
+  learner_created: true
+- name: src/services/UserDetailsServiceImpl.java
+  visible: true
+  learner_created: true
+- name: src/account/RestAuthenticationEntryPoint.java
+  visible: true
+  learner_created: true
+- name: src/services/UserTemp.java
+  visible: true
+  learner_created: true
+- name: src/dto/UserDetailsImpl.java
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/learn/step/16602#comment
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Thu, 22 Sep 2022 12:52:18 UTC
 record: -1
